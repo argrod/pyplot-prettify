@@ -1,7 +1,10 @@
 [project]
 name = "pyplot-prettify"
 version = "0.1.0"
-description = "Add your description here"
+authors = [
+  {name = "Aran Garrod", email = "aran.garrod@gmail.com"},
+]
+description = "Some simple pyplot-based plotting helper functions to clean up plots."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
