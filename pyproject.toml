@@ -8,6 +8,11 @@ description = "Some simple pyplot-based plotting helper functions to clean up pl
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "daltonlens>=0.1.5",
+    "ipykernel>=7.2.0",
     "matplotlib>=3.10.8",
+    "numpy>=2.4.4",
+    "optimizationtestfunctions>=1.0.1",
+    "pillow>=12.2.0",
     "pre-commit>=4.5.1",
 ]
