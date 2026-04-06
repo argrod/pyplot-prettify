@@ -1,0 +1,30 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v5.0.0
+      hooks:
+        - id: check-yaml
+        - id: trailing-whitespace
+        - id: end-of-file-fixer
+        - id: check-added-large-files
+          name: check-add-large-files (notebooks)
+          files: \.ipynb$
+          args: [ '--maxkb=1000' ]
+        - id: check-added-large-files
+          name: check-add-large-files (all others)
+          files: ^.+$(?<!\.ipynb)
+          args: [ '--maxkb=500' ]
+    - repo: https://github.com/astral-sh/ruff-pre-commit
+      rev: v0.11.2
+      hooks:
+        - id: ruff
+          exclude: ^notes/.*$
+          args: [ --fix ]
+        - id: ruff-format
+          exclude: ^notes/.*$
+    - repo: https://github.com/pre-commit/mirrors-mypy
+      rev: v1.15.0
+      hooks:
+        - id: mypy
+          additional_dependencies: [pydantic==2.11.7, pytest==8.1.1, types-pyyaml==6.0.1, types-regex==2022.6.2.0]
